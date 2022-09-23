@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input-fld" type="text">
+    <button id="btn-delete" disabled>Delete</button>
+
+
+    <script>
+        
+        const inputFld = document.getElementById('input-fld');
+        inputFld.addEventListener('keyup', function(event){
+            const text = event.target.value;
+            if (text === 'delete'){
+                deleteBtn.removeAttribute('disabled');
+            }
+            else{
+                deleteBtn.setAttribute('disabled', true);
+            }
+        })
+        const deleteBtn = document.querySelector('#btn-delete');
+        deleteBtn.addEventListener('click', function(){
+            inputFld.style.display = 'none';
+        })
+    </script>
+</body>
+</html>
